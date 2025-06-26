@@ -2,121 +2,59 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Valorant App',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            shadows: [
-              Shadow(
-                blurRadius: 10.0,
-                color: Colors.black,
-                offset: Offset(2.0, 2.0),
-              ),
+    debugShowCheckedModeBanner: false,
+    home: ValorantGuideApp(),
+  ));
+}
+
+class ValorantGuideApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2, // Number of tabs
+      child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 15, 25, 35),
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 15, 25, 35),
+          centerTitle: true,
+          title: Text(
+            'Valorant Guide',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 236, 232, 225),
+            ),
+          ),
+          bottom: TabBar(
+            indicatorColor: Colors.red,
+            labelColor: Colors.red,
+            unselectedLabelColor: Colors.white,
+            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            tabs: [
+              Tab(text: 'Lineups'),
+              Tab(text: 'Agent Draft'),
             ],
           ),
         ),
-        backgroundColor: Colors.redAccent[400],
+        body: TabBarView(
+          children: [
+            // Lineups Tab Content
+            Center(
+              child: Text(
+                'Lineups Content Here',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+            // Agent Draft Tab Content
+            Center(
+              child: Text(
+                'Agent Draft Content Here',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ],
+        ),
       ),
-      body: Column(
-        children: [
-          // Name Row
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                 Text(
-                    'Name:',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 20,
-                    ),
-                  ),
-
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  color: Colors.deepOrange,// Padding inside the text widget
-                  child: Text(
-                    'John Adriann S. Pardo',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          // Age Row
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-
-                 Text(
-                    'Age:',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 20,
-
-                    ),
-                  ),
-
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  color: Colors.amberAccent,// Padding inside the text widget
-                  child: Text(
-                    '21 Years Old',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          // Gender Row
-          Container(
-            margin: EdgeInsets.fromLTRB(5, 4, 3, 2),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              // Padding inside the text widget
-              Text(
-                    'Gender:',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 20,
-                    ),
-                  ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  color: Colors.lightGreen,// Padding inside the text widget
-                  child: Text(
-                    'Male',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-  ));
+    );
+  }
 }
