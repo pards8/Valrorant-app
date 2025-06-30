@@ -39,6 +39,12 @@ class _ListitemsState extends State<Listitems> {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(onPressed:(){
+        Navigator.pushNamed(context, '/add');
+      },
+      child: Icon(Icons.add),
+      )
+
     );
   }
 }
