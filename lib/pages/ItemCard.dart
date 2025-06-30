@@ -11,7 +11,7 @@ class Itemcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 180,
+      width: 170,
       // fixed width only
       child: Card(
         elevation: 4,
