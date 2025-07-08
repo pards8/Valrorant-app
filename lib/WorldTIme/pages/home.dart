@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
                 TextButton.icon(
                   onPressed: () async {
                     dynamic result = await Navigator.pushNamed(context, '/location');
-                    if(result != null){
+                    if (result != null) {
                       setState(() {
                         data = {
                           'time': result['time'],
@@ -58,6 +58,7 @@ class _HomeState extends State<Home> {
                       });
                     }
                   },
+
                   icon: Icon(
                     Icons.edit_location,
                     color: Colors.grey[300],
