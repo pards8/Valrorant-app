@@ -29,7 +29,7 @@ class _AddAgentState extends State<AddAgent> {
            children: [
              Container(
                margin: EdgeInsets.symmetric(vertical: 10),
-                 child: Text('Add Agent Stats',
+                 child: Text('Add Agent Statss',
                  style: TextStyle(
                    fontSize:25,
                    color: Colors.redAccent,
