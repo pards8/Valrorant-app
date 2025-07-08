@@ -23,8 +23,11 @@ class _HomeState extends State<Home> {
 
 
     // set background image
-    String bgImage = data['isDaytime'] ? 'day.png' : 'night.png';
-    Color bgColor = data['isDaytime'] ? Colors.blue : (Colors.indigo[700] ?? Colors.blue);
+    bool isDaytime = data['isDaytime'] == true;
+
+    String bgImage = isDaytime ? 'day.png' : 'night.png';
+    Color bgColor = isDaytime ? Colors.blue : (Colors.indigo[700] ?? Colors.blue);
+
 
 
     return Scaffold(
@@ -71,7 +74,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      data['location'],
+                      data['location'] ?? 'Unknown Location',
                       style: TextStyle(
                         fontSize: 28.0,
                         letterSpacing: 2.0,
@@ -82,11 +85,11 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 20.0),
                 Text(
-                    data['time'],
-                    style: TextStyle(
-                        fontSize: 66.0,
-                        color: Colors.white
-                    )
+                  data['time'] ?? '--:--',
+                  style: TextStyle(
+                    fontSize: 66.0,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
